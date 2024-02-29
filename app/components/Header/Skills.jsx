@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import { FaReact } from "react-icons/fa";
 
 const Skills = () => {
   const skills = [
@@ -17,9 +18,9 @@ const Skills = () => {
   ];
 
   return (
-    <div className="mt-4 lg:mt-10">
+    <div className="mt-4">
       <p className="text-2xl font-bold mb-6 text-center uppercase">My Skills</p>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-6 ">
         {skills.map((skill, index) => (
           <motion.div
             key={index}
@@ -32,7 +33,7 @@ const Skills = () => {
               damping: 10,
               stiffness: 100,
             }}
-            className="bg-gray-800 p-4 rounded-lg shadow-md text-white text-center"
+            className="bg-gray-800 px-4 py-3 rounded-lg shadow-md text-white text-center flex  justify-center items-center gap-2 "
           >
             {skill}
           </motion.div>

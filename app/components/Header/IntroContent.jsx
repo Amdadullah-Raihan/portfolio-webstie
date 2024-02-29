@@ -3,7 +3,7 @@ import Skills from "./Skills";
 
 const IntroContent = () => {
   return (
-    <div className="flex flex-col gap-y-6 justify-center p-4 lg:p-0">
+    <div className="flex flex-col gap-y-6 justify-center  lg:p-0">
       <div>
         <p className="text-5xl font-bold">
           Hello, I&apos;m <span className="text-green-400">Amadul Islam</span>.

@@ -6,17 +6,17 @@ import Link from "next/link";
 const IntroCard = () => {
   const currentYear = new Date().getFullYear();
   const links = [
-    { icon: <FaLinkedin /> },
+    { icon: <FaLinkedin />, url: "" },
     { icon: <FaTwitter /> },
     { icon: <FaFacebook /> },
     { icon: <FaGithub /> },
   ];
 
   return (
-    <div className=" max-w-96 flex flex-col justify-center items-center  rounded-3xl p-3 lg:p-6  m-2 lg:m-0 bg-gray-800  ">
-      <div className="w-full flex gap-8 justify-between items-start">
-        <h1>Amdadul</h1>
-        <p className="font-semibold">
+    <div className=" w-full lg:max-w-[35%] flex flex-col justify-center items-center  rounded-3xl p-3 lg:p-4  lg:m-0 bg-gray-800 ">
+      <div className="w-full flex gap-8 justify-between items-center">
+        <h1 className="">Amdadul</h1>
+        <p className="font-semibold text-sm">
           ReactJS/NextJS <br /> Developer
         </p>
       </div>
@@ -44,7 +44,7 @@ const IntroCard = () => {
         ))}
       </div>
       <div className="mt-4 w-full">
-        <button className="w-full bg-green-400 text-black py-3 rounded-full text-sm uppercase">
+        <button className="w-full bg-green-400 text-black py-3 rounded-full text-sm uppercase font-semibold hover:bg-green-500 transition-all duration-300">
           Hire me
         </button>
       </div>

@@ -24,7 +24,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="fixed top-8 right-4 z-50 w-auto">
+    <div className="fixed top-2 right-2 lg:top-4 lg:right-4 z-50 w-auto">
       <div className="relative">
         <button
           className="text-white text-xl border  border-gray-500 bg-gray-800   w-8 h-8 rounded-full flex items-center justify-center "
