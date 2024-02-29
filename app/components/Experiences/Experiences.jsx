@@ -18,8 +18,8 @@ const Experiences = () => {
     },
     {
       title: "MERN Stack Developer",
-      company: "Upwork (Freelance)",
-      location: "Remote",
+      company: "Upwork",
+      location: "Freelance",
       date: "Feb 2021 - Present",
       responsibilities: [
         "Developed and deployed web apps using TypeScript, NextJS, ReactJS, ExpressJS, MongoDB, and Firebase.",
@@ -31,7 +31,7 @@ const Experiences = () => {
   ];
 
   return (
-    <div className="relative w-full flex flex-col gap-y-6 ">
+    <div className="relative w-full flex flex-col gap-y-6 " id="experiences">
       <p className="text-2xl uppercase font-bold ">My Experiences</p>
       <div className="relative flex flex-col gap-y-12 ml-4 lg:ml-16">
         <motion.div

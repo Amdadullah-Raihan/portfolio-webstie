@@ -17,10 +17,10 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navItems = [
     { href: "/", icon: <FaHome />, text: "Home" },
-    { href: "/", icon: <FaUser />, text: "About me" },
-    { href: "/", icon: <FaIdBadge />, text: "Portfolios" },
-    { href: "/", icon: <FaServer />, text: "Services" },
-    { href: "/", icon: <FaEnvelope />, text: "Contact" },
+    { href: "#experiences", icon: <FaUser />, text: "About me" },
+    { href: "#projects", icon: <FaIdBadge />, text: "Portfolios" },
+    { href: "#services", icon: <FaServer />, text: "Services" },
+    { href: "#contact", icon: <FaEnvelope />, text: "Contact" },
   ];
 
   return (

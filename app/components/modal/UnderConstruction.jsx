@@ -10,8 +10,7 @@ const UnderConstruction = ({ onClose }) => {
       <div className="absolute bg-black opacity-70 h-full w-full"></div>
       <div className="bg-gray-900 relative z-10 text-red-200 p-16 rounded-xl border border-gray-700 text-xl">
         {" "}
-        This website is still in under construction. <br /> Do you still want to
-        continue?
+        This website is still in under construction.
       </div>
     </div>
   );
