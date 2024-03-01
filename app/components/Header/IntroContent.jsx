@@ -13,11 +13,14 @@ const IntroContent = () => {
         </p>
       </div>
 
-      <p className="text-gray-500">
-        A Front-end focused Full Stack Web Developer, skilled in creating
-        seamless user experiences, developing innovative solutions to complex
-        problems, and seeking a challenging role in a dynamic organization to
-        apply my skills and learn from industry experts.
+      <p className="text-gray-400">
+        I&apos;m a Front-end ReactJS/NextJS Developer with a passion for
+        crafting intuitive user interfaces. I contributed to the development of
+        a trading journal platform from scratch at ZigyFlow during my remote
+        internship. This platform had 100+ features 2 million+ targeted
+        userbase. Additionally, I&apos;ve been trying to freelance on Upwork for
+        the past 2 years, I&apos;m dedicated to delivering impactful front-end
+        solutions.
       </p>
 
       <Skills />

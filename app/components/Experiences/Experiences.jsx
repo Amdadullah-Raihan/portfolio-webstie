@@ -19,7 +19,7 @@ const Experiences = () => {
     {
       title: "MERN Stack Developer",
       company: "Upwork",
-      location: "Freelance",
+      location: "  Freelance",
       date: "Feb 2021 - Present",
       responsibilities: [
         "Developed and deployed web apps using TypeScript, NextJS, ReactJS, ExpressJS, MongoDB, and Firebase.",
@@ -31,14 +31,17 @@ const Experiences = () => {
   ];
 
   return (
-    <div className="relative w-full flex flex-col gap-y-6 " id="experiences">
+    <div
+      className="container mx-auto relative w-full flex flex-col gap-y-6 "
+      id="experiences"
+    >
       <p className="text-2xl uppercase font-bold ">My Experiences</p>
       <div className="relative flex flex-col gap-y-12 ml-4 lg:ml-16">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3 }}
-          className="w-[3px] rounded bg-white h-full absolute left-0 z-0"
+          className="w-[3px] rounded bg-blue-100 h-full absolute left-0 z-0"
         ></motion.div>
 
         {experiences.map((experience, index) => (
