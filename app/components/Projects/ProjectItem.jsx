@@ -6,7 +6,7 @@ import { TbListDetails } from "react-icons/tb";
 
 const ProjectItem = ({ project }) => {
   return (
-    <div className="border border-gray-800 rounded-xl p-3 flex flex-col bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-3xl">
+    <div className="border border-gray-800 rounded-xl p-3 flex flex-col bg-teal-800  bg-opacity-10 hover:bg-opacity-20 backdrop-filter backdrop-blur-3xl shadow-2xl hover:">
       <div>
         <div
           className="w-full min-h-36 lg:min-h-64 h-[50%] bg-cover rounded-t-lg"
@@ -14,7 +14,7 @@ const ProjectItem = ({ project }) => {
         ></div>
         <div className="flex flex-col gap-3 my-4">
           <p>{project.title}</p>
-          <div className="text-gray-400">
+          <div className="text-[#94A3B8]">
             {project.description.length > 300 ? (
               <p>{project.description.slice(0, 300)}...</p>
             ) : (
@@ -24,7 +24,7 @@ const ProjectItem = ({ project }) => {
         </div>
       </div>
       <div className="grid gap-2">
-        <button className="bg-gray-800  p-2 rounded-lg flex justify-center items-center gap-4">
+        <button className="bg-teal-800 bg-opacity-15  p-2 rounded-lg flex justify-center items-center gap-4 hover:border hover:border-teal-900">
           <TbListDetails />
           Project Details
         </button>
@@ -33,7 +33,7 @@ const ProjectItem = ({ project }) => {
           href={project.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-gray-800 p-2 rounded-lg flex justify-center items-center gap-4"
+          className="bg-teal-800 bg-opacity-15 p-2 rounded-lg flex justify-center items-center gap-4 hover:border hover:border-teal-900"
         >
           <FaExternalLinkAlt />
           Live Preview

@@ -8,7 +8,7 @@ const IntroCard = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className=" w-full lg:max-w-[35%] flex flex-col justify-center items-center  rounded-3xl p-3 lg:p-4  lg:m-0 bg-gray-800 ">
+    <div className=" w-full lg:max-w-[35%] flex flex-col justify-center items-center  rounded-3xl p-3 lg:p-4  lg:m-0 bg-teal-900  backdrop-filter backdrop-blur-lg bg-opacity-10">
       <div className="w-full flex gap-8 justify-between items-center">
         <h1 className="">Amdadul</h1>
         <p className="font-semibold text-sm">
@@ -19,7 +19,7 @@ const IntroCard = () => {
         <Image
           src={raihan}
           alt="Amdadul"
-          className="w-full h-full bg-gray-700"
+          className="w-full h-full   backdrop-filter backdrop-blur-xl "
         />
       </div>
       <div className="">

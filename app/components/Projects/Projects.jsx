@@ -110,7 +110,7 @@ const Projects = () => {
           <button
             key={skill}
             className={`border border-gray-800 p-2 rounded-lg hover:bg-gray-800 transition-colors duration-300 ${
-              selected === skill && "bg-gray-700"
+              selected === skill && "bg-teal-900 bg-opacity-30"
             }`}
             onClick={() => setSelected(skill)}
           >

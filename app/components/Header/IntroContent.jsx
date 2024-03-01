@@ -13,7 +13,7 @@ const IntroContent = () => {
         </p>
       </div>
 
-      <p className="text-gray-400">
+      <p className="text-[#94A3B8]">
         I&apos;m a Front-end ReactJS/NextJS Developer with a passion for
         crafting intuitive user interfaces. I contributed to the development of
         a trading journal platform from scratch at ZigyFlow during my remote

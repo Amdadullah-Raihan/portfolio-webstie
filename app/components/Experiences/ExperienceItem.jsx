@@ -17,10 +17,10 @@ const ExperienceItem = ({
     <span className="w-4 h-4 p-[5px] border-[3px] border-blue-100  rounded-full bg-gray-900 z-10" />
     <div>
       <p className="text-xl">{title}</p>
-      <p className="text-gray-400">{`${company} (${location})`}</p>
-      <small className="text-gray-400">{date}</small>
+      <p className="text-[#94A3B8]">{`${company} (${location})`}</p>
+      <small className="text-[#94A3B8]">{date}</small>
 
-      <ul className="list-disc text-gray-400 flex flex-col gap-2 mt-4 ml-4">
+      <ul className="list-disc text-[#94A3B8] flex flex-col gap-2 mt-4 ml-4">
         {responsibilities.map((item, index) => (
           <li key={index}>{item}</li>
         ))}

@@ -33,7 +33,7 @@ const Skills = () => {
               damping: 10,
               stiffness: 100,
             }}
-            className="bg-gray-800 px-4 py-3 rounded-lg shadow text-center flex  justify-center items-center gap-2 "
+            className="bg-teal-800 bg-opacity-15 px-4 py-3 rounded-lg shadow text-center flex  justify-center items-center gap-2 "
           >
             {skill}
           </motion.div>
