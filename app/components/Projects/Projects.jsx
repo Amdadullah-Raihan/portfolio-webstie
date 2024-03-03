@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import Skills from "../Header/Skills";
 import ProjectItem from "./ProjectItem";
+import { delay, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const skills = [
   "All",
@@ -96,6 +98,7 @@ const projects = [
 
 const Projects = () => {
   const [selected, setSelected] = useState("All");
+  const [projectsRef, isProjectsInView] = useInView({ triggerOnce: true });
 
   const filteredProjects =
     selected === "All"
@@ -103,19 +106,29 @@ const Projects = () => {
       : projects.filter((project) => project.skills.includes(selected));
 
   return (
-    <div className="relative container mx-auto" id="projects">
+    <motion.div
+      ref={projectsRef}
+      initial={{ y: 50, opacity: 0 }}
+      animate={isProjectsInView ? { y: 0, opacity: 1 } : {}}
+      transition={{ duration: 0.5 }}
+      className="relative container mx-auto"
+      id="projects"
+    >
       <p className="text-2xl uppercase font-bold">My Projects</p>
       <div className={`flex flex-wrap gap-4 my-6 `}>
         {skills?.map((skill) => (
-          <button
+          <motion.button
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4 }}
             key={skill}
             className={`border border-gray-800 p-2 rounded-lg hover:bg-gray-800 transition-colors duration-300 ${
-              selected === skill && "bg-teal-900 bg-opacity-30"
+              selected === skill && "bg-teal-900 bg-opacity-30 "
             }`}
             onClick={() => setSelected(skill)}
           >
             {skill}
-          </button>
+          </motion.button>
         ))}
       </div>
 
@@ -127,12 +140,12 @@ const Projects = () => {
             <span className="text-blue-300"> {selected}</span> yet.
           </div>
         ) : (
-          filteredProjects.map((project) => (
-            <ProjectItem key={project.id} project={project} />
+          filteredProjects.map((project, index) => (
+            <ProjectItem key={project.id} project={project} index={index} />
           ))
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

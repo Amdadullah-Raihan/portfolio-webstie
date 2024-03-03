@@ -1,15 +1,26 @@
 "use client";
-import { useEffect, useState } from "react";
+// Import necessary modules and types
+import React, { useEffect, useState } from "react";
 import Experiences from "./components/Experiences/Experiences";
 import Header from "./components/Header/Header";
 import Projects from "./components/Projects/Projects";
-import UnderConstruction from "./components/modal/UnderConstruction";
+import ScrollToTopButton from "./components/ScrollToToButton";
 
-export default function Home() {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+// Define types for the position
+interface Position {
+  x: number;
+  y: number;
+}
 
+// Define the Home component
+const Home: React.FC = () => {
+  // State to track the mouse position
+  const [position, setPosition] = useState<Position>({ x: 0, y: 0 });
+  console.log(position);
+
+  // Effect to update the mouse position on mouse move
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
     };
 
@@ -28,13 +39,17 @@ export default function Home() {
       <div
         className="fixed w-[600px] h-[600px] rounded-full bg-gradient-radial from-green-500  opacity-5 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none z-50"
         style={{
-          left: position.x,
-          top: position.y,
+          left: `${position.x}px`,
+          top: `${position.y}px`,
         }}
       />
+
       <Header />
       <Experiences />
       <Projects />
+      <ScrollToTopButton />
     </main>
   );
-}
+};
+
+export default Home;

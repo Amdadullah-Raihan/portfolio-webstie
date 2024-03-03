@@ -1,12 +1,16 @@
 import React from "react";
 import Skills from "./Skills";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const IntroContent = () => {
+  const [ref, inView] = useInView({ triggerOnce: true });
   return (
     <div className="flex flex-col gap-y-6 justify-center  lg:p-0">
       <div>
-        <p className="text-5xl font-bold">
-          Hello, I&apos;m <span className="text-green-400">Amadul Islam</span>.
+        <p className="text-[2.7rem] md:text-5xl font-bold leading-tight">
+          Hello, I&apos;m <br className="md:hidden" />{" "}
+          <span className="text-green-400">Amadul Islam</span>.
         </p>
         <p className="text-xl ">
           I craft delightful user experiences as a Front-end Developer.

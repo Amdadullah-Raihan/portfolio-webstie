@@ -45,7 +45,7 @@ const Experiences = () => {
         ></motion.div>
 
         {experiences.map((experience, index) => (
-          <ExperienceItem key={index} {...experience} />
+          <ExperienceItem key={index} {...experience} index={index} />
         ))}
       </div>
     </div>

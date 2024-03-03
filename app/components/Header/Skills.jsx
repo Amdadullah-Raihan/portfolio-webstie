@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaReact } from "react-icons/fa";
+import { useInView } from "react-intersection-observer";
 
 const Skills = () => {
   const skills = [
@@ -17,15 +18,19 @@ const Skills = () => {
     "REST APIs",
   ];
 
+  const [skillsRef, isSkillsInView] = useInView({ triggerOnce: true });
+
   return (
     <div className="mt-4">
       <p className="text-2xl font-bold mb-6 text-center uppercase">My Skills</p>
+
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-6 ">
         {skills.map((skill, index) => (
           <motion.div
+            ref={skillsRef}
             key={index}
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
+            animate={isSkillsInView ? { opacity: 1, scale: 1, y: 0 } : {}}
             whileHover={{ scale: 1.1 }}
             transition={{
               delay: index * 0.1,
