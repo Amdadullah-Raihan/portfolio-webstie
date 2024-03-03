@@ -114,7 +114,7 @@ const Projects = () => {
       className="relative container mx-auto"
       id="projects"
     >
-      <p className="text-2xl uppercase font-bold">My Projects</p>
+      <p className="text-2xl uppercase font-bold text__shadow">My Projects</p>
       <div className={`flex flex-wrap gap-4 my-6 `}>
         {skills?.map((skill) => (
           <motion.button
@@ -122,8 +122,8 @@ const Projects = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4 }}
             key={skill}
-            className={`border border-gray-800 p-2 rounded-lg hover:bg-gray-800 transition-colors duration-300 ${
-              selected === skill && "bg-teal-900 bg-opacity-30 "
+            className={`border border-gray-800 p-2 rounded-lg transition-all duration-300 shadow__on__hover ${
+              selected === skill && "custom__shadow"
             }`}
             onClick={() => setSelected(skill)}
           >

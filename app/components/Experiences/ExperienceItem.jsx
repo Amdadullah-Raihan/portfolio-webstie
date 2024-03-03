@@ -19,7 +19,7 @@ const ExperienceItem = ({
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className={`flex items-baseline gap-4 lg:gap-10 -ml-[7px]`}
     >
-      <div className="w-4 h-4 p-[5px] border-[3px] border-blue-100  rounded-full bg-gray-900 z-10" />
+      <div className="w-4 h-4 p-[5px] border-[3px] border-blue-100  rounded-full bg-gray-900 z-10  " />
       <div>
         <p className="text-xl">{title}</p>
         <p className="text-[#94A3B8]">{`${company} (${location})`}</p>

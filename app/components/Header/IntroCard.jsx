@@ -9,7 +9,7 @@ const IntroCard = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="relative w-full lg:max-w-[40%]">
+    <div className="relative w-full lg:max-w-[40%] custom__shadow rounded-3xl">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -43,7 +43,7 @@ const IntroCard = () => {
             href="https://drive.google.com/file/d/1TmPdtPbwJ6U1KTc_UE7z45Y4DviklB8i/view"
             target="_black"
           >
-            <button className="w-full bg-green-400 text-black py-3 rounded-full text-sm uppercase font-semibold hover:bg-green-500 transition-all duration-300">
+            <button className="w-full bg-green-400 text-black py-3 rounded-full text-sm uppercase font-semibold hover:bg-green-500 btn-shadow transition-all duration-300">
               Hire me
             </button>
           </Link>

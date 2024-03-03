@@ -6,17 +6,13 @@ import Header from "./components/Header/Header";
 import Projects from "./components/Projects/Projects";
 import ScrollToTopButton from "./components/ScrollToToButton";
 
-// Define types for the position
 interface Position {
   x: number;
   y: number;
 }
 
-// Define the Home component
 const Home: React.FC = () => {
-  // State to track the mouse position
   const [position, setPosition] = useState<Position>({ x: 0, y: 0 });
-  console.log(position);
 
   // Effect to update the mouse position on mouse move
   useEffect(() => {
