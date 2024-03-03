@@ -9,20 +9,20 @@ const IntroCard = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="relative w-full lg:max-w-[35%]">
+    <div className="relative w-full lg:max-w-[40%]">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="relative z-10 flex flex-col justify-center items-center  rounded-3xl p-3 lg:p-4  lg:m-0 bg-teal-900  backdrop-filter backdrop-blur-lg bg-opacity-10  "
       >
-        <div className="w-full flex gap-8 justify-between items-center ">
-          <h1 className="">Amdadul</h1>
+        <div className="w-full flex gap-4 justify-between items-center ">
+          <h1 className="text-4xl md:text-[2.9rem]  font-bold">Amdadul</h1>
           <p className="font-semibold text-sm">
             ReactJS/NextJS <br /> Developer
           </p>
         </div>
-        <div className="my-4 rounded-3xl max-h-80 overflow-hidden ">
+        <div className="my-4 rounded-3xl max-h-96 overflow-hidden ">
           <Image
             src={raihan}
             alt="Amdadul"

@@ -8,11 +8,11 @@ const IntroContent = () => {
   return (
     <div className="flex flex-col gap-y-6 justify-center  lg:p-0">
       <div>
-        <p className="text-[2.7rem] md:text-5xl font-bold leading-tight">
-          Hello, I&apos;m <br className="md:hidden" />{" "}
+        <p className="text-[2.4em] md:text-[2.6rem] font-bold leading-tight">
+          Hello, I&apos;m <br className="md:hidden" />
           <span className="text-green-400">Amadul Islam</span>.
         </p>
-        <p className="text-xl ">
+        <p className="text-lg md:text-xl ">
           I craft delightful user experiences as a Front-end Developer.
         </p>
       </div>
