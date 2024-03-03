@@ -5,7 +5,13 @@ import { FaFacebook, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { TbBrandLeetcode } from "react-icons/tb";
 import Tooltip from "./utils/Tooltip";
 
-const links = [
+interface LinkItem {
+  icon: React.ReactElement;
+  url: string;
+  tooltip: string;
+}
+
+const links: LinkItem[] = [
   {
     icon: <FaLinkedin />,
     url: "https://www.linkedin.com/in/amdadul-islam-raihan-010611215/",
@@ -28,8 +34,8 @@ const links = [
   },
 ];
 
-const SocialsLinks = () => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+const SocialsLinks: React.FC = () => {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     <div className="flex gap-2">
