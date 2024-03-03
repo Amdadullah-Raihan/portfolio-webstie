@@ -9,7 +9,8 @@ const IntroContent = () => {
     <div className="flex flex-col gap-y-6 justify-center  lg:p-0">
       <div>
         <p className="text-[2.4em] md:text-[2.6rem] font-bold leading-tight">
-          Hello, I&apos;m <br className="md:hidden" />
+          Hello, I<span className="text-green-400">&apos;</span>m{" "}
+          <br className="md:hidden" />
           <span className="text-green-400">Amadul Islam</span>.
         </p>
         <p className="text-lg md:text-xl ">

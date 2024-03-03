@@ -7,6 +7,7 @@ const ExperienceItem = ({
   location,
   date,
   responsibilities,
+  index,
 }) => {
   const [ref, inView] = useInView({ triggerOnce: true });
 
@@ -15,10 +16,10 @@ const ExperienceItem = ({
       ref={ref}
       initial={{ x: -50, opacity: 0 }}
       animate={inView ? { x: 0, opacity: 1 } : {}}
-      transition={{ duration: 0.5 }}
-      className="flex gap-4 lg:gap-10 -ml-[7px]"
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className={`flex items-baseline gap-4 lg:gap-10 -ml-[7px]`}
     >
-      <span className="w-4 h-4 p-[5px] border-[3px] border-blue-100  rounded-full bg-gray-900 z-10" />
+      <div className="w-4 h-4 p-[5px] border-[3px] border-blue-100  rounded-full bg-gray-900 z-10" />
       <div>
         <p className="text-xl">{title}</p>
         <p className="text-[#94A3B8]">{`${company} (${location})`}</p>

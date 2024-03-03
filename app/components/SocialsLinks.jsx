@@ -1,7 +1,9 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { FaFacebook, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { TbBrandLeetcode } from "react-icons/tb";
+import Tooltip from "./utils/Tooltip";
 
 const links = [
   {
@@ -27,6 +29,8 @@ const links = [
 ];
 
 const SocialsLinks = () => {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
   return (
     <div className="flex gap-2">
       {links.map((link, index) => (
@@ -34,9 +38,12 @@ const SocialsLinks = () => {
           key={index}
           target="_blank"
           href={link.url}
-          className="border p-2 rounded-full hover:border-green-500 hover:text-green-500 transition-colors duration-300"
+          className="relative border p-2 rounded-full hover:border-green-500 hover:text-green-500 transition-colors duration-300"
+          onMouseEnter={() => setHoveredIndex(index)}
+          onMouseLeave={() => setHoveredIndex(null)}
         >
           {link.icon}
+          {hoveredIndex === index && <Tooltip data={link.tooltip} />}
         </Link>
       ))}
     </div>
