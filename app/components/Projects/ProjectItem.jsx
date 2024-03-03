@@ -22,7 +22,7 @@ const ProjectItem = ({ project, index }) => {
 
   const hoverStyles = {
     backgroundImage: `url(${project.imgUrl})`,
-    backgroundPosition: isHovered ? "50% 150%" : "50% 50%",
+    backgroundPosition: isHovered ? "0% 100%" : "0% 0%",
     transition: "background-position 0.5s ease",
   };
 
@@ -45,8 +45,10 @@ const ProjectItem = ({ project, index }) => {
       className={`border border-gray-800 rounded-xl p-3 flex flex-col bg-teal-800  bg-opacity-10 custom__shadow shadow__lg__on__hover hover:transition-all hover:duration-300 `}
     >
       <div
-        className="w-full min-h-36 lg:min-h-64 h-[50%] bg-cover rounded-t-lg"
+        className="w-full min-h-52 lg:min-h-72 bg-cover rounded-t-lg"
         style={hoverStyles}
+        onMouseEnter={handleHover}
+        onMouseLeave={handleLeave}
       ></div>
       <div>
         <div className="flex flex-col gap-3 my-4">

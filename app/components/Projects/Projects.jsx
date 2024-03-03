@@ -54,8 +54,7 @@ const projects = [
       "TailwindCSS",
       "ExpressJS",
     ],
-    imgUrl:
-      "https://i.ibb.co/GsQcFZ4/screencapture-tourism-roberto-web-app-2024-02-29-21-37-15.png",
+    imgUrl: "https://i.ibb.co/Wtznx20/roberto.png",
   },
   {
     id: 3,
