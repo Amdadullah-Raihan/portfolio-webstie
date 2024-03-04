@@ -27,7 +27,7 @@ const Navbar = () => {
     <div className="fixed top-2 right-2 lg:top-4 lg:right-4 z-50 w-auto">
       <div className="relative">
         <button
-          className="text-white text-xl border  border-gray-500 bg-gray-800   w-8 h-8 rounded-full flex items-center justify-center "
+          className="text-white custom__shadow  w-8 h-8 rounded-full flex items-center justify-center "
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <CgClose /> : <RiMenu3Fill />}
@@ -37,7 +37,7 @@ const Navbar = () => {
             initial={{ opacity: 0, scale: 0.8, x: 20, y: -20 }}
             animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
             transition={{ duration: 0.3 }}
-            className={`min-w-44 absolute top-8 right-2 bg-gray-800 rounded-3xl p-2 lg:p-4 text-white flex flex-col gap-y-1 shadow-lg border border-gray-500`}
+            className={`min-w-44 absolute top-7 right-4 bg-[#12272A]  rounded-3xl p-2 lg:p-4 text-white flex flex-col gap-y-1 shadow-lg custom__shadow`}
           >
             {navItems.map((item, index) => (
               <NavItem key={index} {...item} index={index} />

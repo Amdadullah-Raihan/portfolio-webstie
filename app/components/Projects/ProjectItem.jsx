@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
@@ -5,6 +6,7 @@ import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import { TbListDetails } from "react-icons/tb";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
+import ProjectDetails from "./ProjectDetails";
 
 const ProjectItem = ({ project, index }) => {
   const descriptionRef = useRef(null);
@@ -38,18 +40,20 @@ const ProjectItem = ({ project, index }) => {
 
   return (
     <motion.div
-      ref={projectRef}
       initial={{ scale: 0.8, opacity: 0, y: 20 }}
       animate={isProjectInView ? { scale: 1, opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
+      transition={{ duration: 0.3, delay: index * 0.1 }}
+      ref={projectRef}
       className={`border border-gray-800 rounded-xl p-3 flex flex-col bg-teal-800  bg-opacity-10 custom__shadow shadow__lg__on__hover hover:transition-all hover:duration-300 `}
     >
       <div
-        className="w-full min-h-52 lg:min-h-72 bg-cover rounded-t-lg"
+        className="relative w-full min-h-52 lg:min-h-72 bg-cover rounded-t-lg bg-green-900"
         style={hoverStyles}
         onMouseEnter={handleHover}
         onMouseLeave={handleLeave}
-      ></div>
+      >
+        <div className="absolute lg:bg-green-900 lg:bg-opacity-15 hover:bg-opacity-0 h-full w-full rounded-t-lg" />
+      </div>
       <div>
         <div className="flex flex-col gap-3 my-4">
           <p>{project.title}</p>
@@ -70,10 +74,13 @@ const ProjectItem = ({ project, index }) => {
       </div>
 
       <div className="grid md:grid-cols-2 gap-2 z-10">
-        <button className="bg-teal-800 bg-opacity-15  p-2 rounded-lg flex justify-center items-center gap-4 shadow__on__hover transition-shadow duration-300">
+        <Link
+          href={`/projects/${project.id}`}
+          className="bg-teal-800 bg-opacity-15  p-2 rounded-lg flex justify-center items-center gap-4 shadow__on__hover transition-shadow duration-300"
+        >
           <TbListDetails />
           Project Details
-        </button>
+        </Link>
 
         <a
           href={project.link}

@@ -1,102 +1,14 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Skills from "../Header/Skills";
 import ProjectItem from "./ProjectItem";
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-
-const skills = [
-  "All",
-  "ReactJS",
-  "NextJS",
-  "TypeScript",
-  "JavaScript",
-  "ExpressJS",
-  "NodeJS",
-  "Redux",
-  "MongoDB",
-  "TailwindCSS",
-];
-
-const projects = [
-  {
-    id: 1,
-    title: "Inventory Manager Pro",
-    description:
-      "Inventory Manager Pro is a sleek and efficient web application designed to streamline inventory management. Developed using ReactJS and hosted on Vercel, this project offers a user-friendly interface for easy tracking and organization of inventory. Check out the live demo to explore its seamless functionality.",
-    link: "https://inventory-manager-pro.vercel.app/",
-    skills: [
-      "ReactJS",
-      "NextJS",
-      "ExpressJS",
-      "NodeJS",
-      "MongoDB",
-      "JavaScript",
-      "TypeScript",
-      "ExpressJS",
-      "TailwindCSS",
-    ],
-    imgUrl:
-      "https://i.ibb.co/zHzZ57r/screencapture-inventory-manager-pro-vercel-app-2024-02-29-21-34-29.png",
-  },
-  {
-    id: 2,
-    title: "Roberto Hotel & Resort",
-    description:
-      "Embark on a virtual journey with the Tourism Roberto website. Crafted using ReactJS and hosted on Firebase, this platform invites you to explore exciting destinations and plan your dream vacation. Immerse yourself in a visually captivating experience, complete with dynamic content and smooth navigation. Visit the live site to start your adventure.",
-    link: "https://tourism-roberto.web.app/",
-    skills: [
-      "ReactJS",
-      "ExpressJS",
-      "NodeJS",
-      "MongoDB",
-      "JavaScript",
-      "TailwindCSS",
-      "ExpressJS",
-    ],
-    imgUrl: "https://i.ibb.co/Wtznx20/roberto.png",
-  },
-  {
-    id: 3,
-    title: "Digital Fashion Store",
-    description:
-      "Digital Fashion Store is a vibrant e-commerce website built with ReactJS and hosted on Firebase. Dive into a visually appealing and user-friendly online shopping experience. Explore the latest fashion trends and enjoy smooth navigation. Visit the live site to browse the collections and witness the seamless integration of design and functionality.",
-    link: "https://digital-fashion-store.web.app/",
-    skills: [
-      "ReactJS",
-      "ExpressJS",
-      "NodeJS",
-      "MongoDB",
-      "JavaScript",
-      "TailwindCSS",
-      "ExpressJS",
-    ],
-    imgUrl:
-      "https://i.ibb.co/sKTdrPW/screencapture-digital-fashion-store-web-app-2024-02-29-21-36-28.png",
-  },
-  {
-    id: 4,
-    title: "GetDone",
-    description:
-      "Experience productivity at its best with the Todo App. This minimalist task management web application, developed using ReactJS and hosted on Vercel, offers a clean and intuitive interface. Easily add, edit, and check off tasks with real-time updates. Explore the live demo to simplify your to-do list today.",
-    link: "https://todo-app-qtech.vercel.app/",
-    skills: [
-      "ReactJS",
-      "NextJS",
-      "ExpressJS",
-      "NodeJS",
-      "MongoDB",
-      "JavaScript",
-      "TailwindCSS",
-      "ExpressJS",
-    ],
-    imgUrl:
-      "https://i.ibb.co/N1T4wdL/screencapture-todo-app-qtech-vercel-app-2024-02-29-21-23-53.png",
-  },
-];
+import data from "./data";
 
 const Projects = () => {
   const [selected, setSelected] = useState("All");
+  const [projects, skills] = data();
   const [projectsRef, isProjectsInView] = useInView({ triggerOnce: true });
 
   const filteredProjects =
@@ -110,16 +22,17 @@ const Projects = () => {
       initial={{ y: 50, opacity: 0 }}
       animate={isProjectsInView ? { y: 0, opacity: 1 } : {}}
       transition={{ duration: 0.5 }}
-      className="relative container mx-auto"
+      className="relative xl:container mx-auto pb-10"
       id="projects"
     >
-      <p className="text-2xl uppercase font-bold text__shadow">My Projects</p>
+      <p className="text-2xl uppercase font-bold text__shadow ">
+        <span className="text-green-400 font-bold text-3xl">&lt;</span>My
+        Projects<span className="text-green-400">&#47;</span>
+        <span className="text-green-400 font-bold text-3xl">&gt;</span>
+      </p>
       <div className={`flex flex-wrap gap-4 my-6 `}>
         {skills?.map((skill) => (
           <motion.button
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4 }}
             key={skill}
             className={`border border-gray-800 p-2 rounded-lg transition-all duration-300 shadow__on__hover ${
               selected === skill && "custom__shadow"
@@ -131,19 +44,26 @@ const Projects = () => {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
-        {filteredProjects.length === 0 ? (
-          <div className="py-8 ">
-            <span className="text-rose-300">Sorry!! </span> I didn&apos;t
-            develop any project using{" "}
-            <span className="text-blue-300"> {selected}</span> yet.
-          </div>
-        ) : (
-          filteredProjects.map((project, index) => (
-            <ProjectItem key={project.id} project={project} index={index} />
-          ))
-        )}
-      </div>
+      {filteredProjects.length > 0 ? (
+        <div
+          id="projects_container"
+          className="grid lg:grid-cols-2 gap-4 lg:gap-6 "
+        >
+          {filteredProjects.map((project, index) => (
+            <ProjectItem
+              key={project.id}
+              project={project}
+              dataOrder={index + 1}
+            />
+          ))}
+        </div>
+      ) : (
+        <div>
+          <span className="text-rose-300 font-bold">Sorry!!</span> I didn&apos;t
+          build any project using{" "}
+          <span className="text-green-500">{selected}</span> yet.
+        </div>
+      )}
     </motion.div>
   );
 };

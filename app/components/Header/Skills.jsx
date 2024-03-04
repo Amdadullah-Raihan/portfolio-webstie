@@ -23,7 +23,10 @@ const Skills = () => {
   return (
     <div className="mt-4">
       <p className="text-2xl font-bold mb-6 text-center uppercase text__shadow">
-        My Skills
+        <span className="text-green-400 font-bold text-3xl">&lt;</span>My Skills
+        {""}
+        <span className="text-green-400 font-bold">&#47;</span>
+        <span className="text-green-400 font-bold text-3xl">&gt;</span>
       </p>
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-6 ">

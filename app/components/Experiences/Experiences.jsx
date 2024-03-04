@@ -32,11 +32,14 @@ const Experiences = () => {
 
   return (
     <section
-      className="container mx-auto relative w-full flex flex-col gap-y-6 "
+      className="xl:container mx-auto relative w-full flex flex-col gap-y-6 "
       id="experiences"
     >
       <p className="text-2xl uppercase font-bold  text__shadow">
-        My Experiences
+        <span className="text-green-400 font-bold text-3xl">&lt;</span>My
+        Experiences{""}
+        <span className="text-green-400">&#47;</span>
+        <span className="text-green-400 font-bold text-3xl">&gt;</span>
       </p>
       <div className="relative flex flex-col gap-y-12 ml-4 lg:ml-16 z-10">
         <motion.div className="w-[3px] rounded bg-blue-100 h-full absolute left-0 z-0"></motion.div>
