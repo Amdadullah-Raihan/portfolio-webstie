@@ -8,7 +8,7 @@ const Project = () => {
       <ProjectDetails />
       <button>
         {" "}
-        <Link href="/" className="custom__shadow px-4 py-2 rounded-lg">
+        <Link href="/" className="custom__shadow px-4 py-2 rounded-lg ">
           Go Back to Homepage
         </Link>
       </button>

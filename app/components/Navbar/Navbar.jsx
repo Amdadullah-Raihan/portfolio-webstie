@@ -19,7 +19,7 @@ const Navbar = () => {
     { href: "/", icon: <FaHome />, text: "Home" },
     { href: "experiences", icon: <FaUser />, text: "About me" },
     { href: "projects", icon: <FaIdBadge />, text: "Portfolios" },
-    { href: "services", icon: <FaServer />, text: "Services" },
+    // { href: "services", icon: <FaServer />, text: "Services" },
     { href: "contact", icon: <FaEnvelope />, text: "Contact" },
   ];
 
@@ -27,7 +27,7 @@ const Navbar = () => {
     <div className="fixed top-2 right-2 lg:top-4 lg:right-4 z-50 w-auto">
       <div className="relative">
         <button
-          className="text-white custom__shadow  w-8 h-8 rounded-full flex items-center justify-center "
+          className="text-white custom__shadow bg-[#12272A]  w-8 h-8 rounded-full flex items-center justify-center "
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <CgClose /> : <RiMenu3Fill />}

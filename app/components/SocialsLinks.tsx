@@ -38,13 +38,13 @@ const SocialsLinks: React.FC = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-3">
       {links.map((link, index) => (
         <Link
           key={index}
           target="_blank"
           href={link.url}
-          className="relative border p-2 rounded-full hover:border-green-500 hover:text-green-500 transition-colors duration-300"
+          className="relative custom__shadow p-3 rounded-full shadow__lg__on__hover transition-colors duration-300"
           onMouseEnter={() => setHoveredIndex(index)}
           onMouseLeave={() => setHoveredIndex(null)}
         >

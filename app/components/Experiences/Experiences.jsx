@@ -2,6 +2,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import ExperienceItem from "./ExperienceItem";
+import bg from "../../assests/bg.jpg";
+import Image from "next/image";
 
 const Experiences = () => {
   const experiences = [
@@ -32,7 +34,7 @@ const Experiences = () => {
 
   return (
     <section
-      className="xl:container mx-auto relative w-full flex flex-col gap-y-6 "
+      className="xl:container mx-auto relative w-full flex flex-col gap-y-6 bg-cover"
       id="experiences"
     >
       <p className="text-2xl uppercase font-bold  text__shadow">
