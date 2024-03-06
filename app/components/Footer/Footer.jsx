@@ -4,6 +4,8 @@ import Contact from "../Contact/Contact";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const nodeEnv = process.env.NODE_ENV;
+
   return (
     <div
       className=" bg-teal-800 bg-opacity-5   py-8  flex  flex-col-reverse items-center  justify-between"
@@ -13,7 +15,8 @@ const Footer = () => {
       <div className="mb-4">
         <SocialsLinks />
       </div>
-      <Contact />
+
+      {nodeEnv === "development" ? <Contact /> : null}
     </div>
   );
 };

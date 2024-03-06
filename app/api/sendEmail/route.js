@@ -1,10 +1,9 @@
-// netlify/functions/sendEmail.js
-
+import { NextResponse } from "next/server";
 import { createTransport } from "nodemailer";
 
-export async function handler(event) {
+export async function POST(request) {
   try {
-    const { name, email, message } = JSON.parse(event.body);
+    const { name, email, message } = await request.json();
 
     // Create a nodemailer transporter
     const transporter = createTransport({
@@ -17,7 +16,7 @@ export async function handler(event) {
 
     // Configure the email options
     const mailOptions = {
-      from: "your.email@gmail.com",
+      from: email,
       to: "amdadullahrayhan@gmail.com",
       subject: `New contact form submission from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
@@ -26,16 +25,16 @@ export async function handler(event) {
     // Send the email
     await transporter.sendMail(mailOptions);
 
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ message: "Email sent successfully" }),
-    };
+    return NextResponse.json(
+      { message: "Email sent successfully!" },
+      { status: 200 }
+    );
   } catch (error) {
     console.error("Error sending email:", error);
 
-    return {
+    return NextResponse.json({
       statusCode: 500,
       body: JSON.stringify({ message: "Failed to send email" }),
-    };
+    });
   }
 }

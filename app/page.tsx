@@ -5,6 +5,7 @@ import Experiences from "./components/Experiences/Experiences";
 import Header from "./components/Header/Header";
 import Projects from "./components/Projects/Projects";
 import ScrollToTopButton from "./components/ScrollToToButton";
+import { Toaster } from "react-hot-toast";
 
 interface Position {
   x: number;
@@ -44,6 +45,9 @@ const Home: React.FC = () => {
       <Experiences />
       <Projects />
       <ScrollToTopButton />
+
+      {/* global toast contaienr */}
+      <Toaster />
     </main>
   );
 };

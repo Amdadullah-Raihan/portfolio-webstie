@@ -1,7 +1,10 @@
 "use client";
 import React, { useState } from "react";
+import { motion } from "framer-motion";
+import toast from "react-hot-toast";
 
 const ContactForm = () => {
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -14,13 +17,15 @@ const ContactForm = () => {
       ...formData,
       [name]: value,
     });
+
+    console.log(name, value);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("This feature isn't availavle yet. ");
     try {
-      const response = await fetch("YOUR_NETLIFY_FUNCTION_ENDPOINT", {
+      setLoading(true);
+      const response = await fetch("/api/sendEmail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -29,14 +34,23 @@ const ContactForm = () => {
       });
 
       if (response.ok) {
-        console.log("Email sent successfully!");
+        toast.success("Message sent successfully");
+        setFormData({ name: "", email: "", message: "" });
       } else {
-        console.error("Failed to send email.");
+        toast.error("Failed to send Message");
+        console.error("Failed to send Message.");
       }
     } catch (error) {
+      toast.error("Error sending email", {
+        duration: 3000,
+        position: "top-right",
+      });
       console.error("Error sending email:", error);
+    } finally {
+      setLoading(false);
     }
   };
+
   return (
     <div className=" w-full lg:w-1/2 xl:w-1/3 rounded-md p-4">
       <div className="grid grid-cols-2 justify-between items-center mb-4">
@@ -54,6 +68,8 @@ const ContactForm = () => {
             className="w-full p-2  rounded-md bg-teal-800 bg-opacity-20 outline-none"
             placeholder="John Doe"
             required
+            value={formData.name}
+            onChange={handleChange}
           />
         </div>
 
@@ -68,6 +84,8 @@ const ContactForm = () => {
             className="w-full p-2  rounded-md bg-teal-800 bg-opacity-20 outline-none"
             placeholder="john@example.com"
             required
+            value={formData.email}
+            onChange={handleChange}
           />
         </div>
 
@@ -82,15 +100,21 @@ const ContactForm = () => {
             className="w-full p-2  rounded-md bg-teal-800 bg-opacity-20 outline-none"
             placeholder="Type your message here..."
             required
+            value={formData.message}
+            onChange={handleChange}
           ></textarea>
         </div>
         <div className="mb-10">
-          <button
-            type="submit"
-            className=" bg-teal-800 bg-opacity-20 shadow__lg__on__hover w-full py-2 px-4 rounded-md  transition-all duration-300"
-          >
-            Submit
-          </button>
+          <div className="mb-10">
+            <motion.button
+              whileTap={{ scale: 0.7 }}
+              type="submit"
+              className="bg-teal-800 bg-opacity-20 shadow__lg__on__hover w-full py-2 px-4 rounded-md  transition-all "
+              disabled={loading}
+            >
+              {loading ? "Sending..." : "Submit"}
+            </motion.button>
+          </div>
         </div>
       </form>
     </div>
