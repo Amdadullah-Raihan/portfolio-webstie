@@ -75,11 +75,11 @@ form button {
 
 /* Define the style of the scrollbar thumb */
 ::-webkit-scrollbar-thumb {
-  background-color: #6b7280; /* Set the color of the scrollbar thumb */
+  background-color: #6366f1; /* Set the color of the scrollbar thumb */
   border-radius: 3px; /* Set the border radius of the scrollbar thumb */
 }
 
 /* Define the style of the scrollbar track */
 ::-webkit-scrollbar-track {
-  background-color: #d4d4d8; /* Set the color of the scrollbar track */
+  background-color: #bfdbfe; /* Set the color of the scrollbar track */
 }

@@ -13,7 +13,7 @@ const Project = () => {
   const project = projects.filter((project) => project.id.toString() === id);
 
   return (
-    <div className="w-full max-w-screen-xl p-4 mx-auto mb-16 max-w- lg:p-16">
+    <div className="w-full max-w-screen-xl p-4 mx-auto pb-14 lg:pb-16 lg:p-16">
       <motion.button whileTap={{ scale: 0.7 }} className="mb-16">
         {" "}
         <Link href="/" className="px-4 py-2 rounded-lg custom__shadow ">

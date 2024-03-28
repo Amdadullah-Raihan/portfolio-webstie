@@ -15,6 +15,14 @@ const projects = [
       "TypeScript",
       "TailwindCSS",
     ],
+    code: {
+      fullCode: "https://github.com/Amdadullah-Raihan/inventory-manager-pro",
+    },
+    myContributions: [
+      "Developed an inventory management solution with TypeScript, NextJS, ReactJS, ExpressJs, Mongoose, Framer Motion, and Firebase, optimizing tracking, reducing errors, and enhancing efficiency.",
+      "Designed an intuitive user registration system for seamless onboarding, featuring responsive UI elements.",
+      "Implemented strong security with authentication, data encryption, and optimized scalability for consistent performance as product inventories and user traffic grow",
+    ],
     imgUrl:
       "https://i.ibb.co/zHzZ57r/screencapture-inventory-manager-pro-vercel-app-2024-02-29-21-34-29.png",
   },
@@ -33,6 +41,16 @@ const projects = [
       "TailwindCSS",
       ,
     ],
+    code: {
+      clientCode:
+        "https://github.com/Amdadullah-Raihan/digital-fashion-store-client",
+      serverCode: "https://github.com/Amdadullah-Raihan/tourism-roberto-server",
+    },
+    myContributions: [
+      "Built a full-stack platform using ReactJS, ExpressJS, MongoDB Atlas, TailwindCSS, and Firebase.",
+      "Designed and implemented a user-friendly booking and blog platform.",
+      "Added admin capabilities for adding/modifying rooms and blogs and managing bookings.",
+    ],
     imgUrl: "https://i.ibb.co/Wtznx20/roberto.png",
   },
   {
@@ -48,6 +66,17 @@ const projects = [
       "MongoDB",
       "JavaScript",
       "TailwindCSS",
+    ],
+    code: {
+      clientCode:
+        "https://github.com/Amdadullah-Raihan/digital-fashion-store-client",
+      serverCode:
+        "https://github.com/Amdadullah-Raihan/digital-fashion-store-server",
+    },
+    myContributions: [
+      "Created a dynamic e-commerce platform using ReactJS, ExpressJS, MongoDB, and Firebase to offer an engaging online shopping experience for fashion enthusiasts.",
+      "Designed an intuitive user interface with a focus on user experience, incorporating responsive design principles to ensure a seamless shopping journey across various devices.",
+      "Implemented secure authentication and data storage mechanisms to protect customer information.",
     ],
     imgUrl:
       "https://i.ibb.co/sKTdrPW/screencapture-digital-fashion-store-web-app-2024-02-29-21-36-28.png",
@@ -66,6 +95,10 @@ const projects = [
       "JavaScript",
       "TailwindCSS",
     ],
+    code: {
+      fullCode: "https://github.com/Amdadullah-Raihan/getDone-todo-app",
+    },
+    myContributions: [],
     imgUrl:
       "https://i.ibb.co/N1T4wdL/screencapture-todo-app-qtech-vercel-app-2024-02-29-21-23-53.png",
   },
