@@ -13,9 +13,9 @@
   box-shadow: 0 0 5px #059669;
 }
 
-.text__shadow {
+/* .text__shadow {
   text-shadow: 0 0 5px #059669;
-}
+} */
 
 /* Remove outline and add glow effect on focus for input and textarea */
 input:focus,
@@ -31,4 +31,55 @@ textarea {
 
 form button {
   box-shadow: inset 0 0 10px #059669;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: scale(0, 1);
+  transform-origin: 100% 50%;
+  transition: transform 0.3s;
+}
+
+.btn:hover::before {
+  transform: scale(1, 1);
+  transform-origin: 0% 50%;
+}
+
+.glass {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* For webkit-based browsers like Chrome, Safari, Edge */
+::-webkit-scrollbar {
+  width: 6px; /* Set the width of the scrollbar */
+}
+
+/* Define the style of the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #6b7280; /* Set the color of the scrollbar thumb */
+  border-radius: 3px; /* Set the border radius of the scrollbar thumb */
+}
+
+/* Define the style of the scrollbar track */
+::-webkit-scrollbar-track {
+  background-color: #d4d4d8; /* Set the color of the scrollbar track */
 }

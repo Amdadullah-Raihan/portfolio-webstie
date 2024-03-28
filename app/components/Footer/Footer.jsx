@@ -15,8 +15,7 @@ const Footer = () => {
       <div className="mb-4">
         <SocialsLinks />
       </div>
-
-      {nodeEnv === "development" ? <Contact /> : null}
+      <Contact />
     </div>
   );
 };

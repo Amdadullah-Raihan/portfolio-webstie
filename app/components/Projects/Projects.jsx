@@ -35,8 +35,9 @@ const Projects = () => {
       <div className={`flex flex-wrap gap-4 my-6 `}>
         {skills?.map((skill) => (
           <motion.button
+            whileTap={{ scale: 0.5 }}
             key={skill}
-            className={`border border-gray-800 p-2 rounded-lg transition-all duration-300 shadow__on__hover ${
+            className={`border border-gray-800 p-2 rounded-lg transition-all duration-300  shadow__on__hover ${
               selected === skill && "custom__shadow"
             }`}
             onClick={() => setSelected(skill)}
@@ -49,7 +50,7 @@ const Projects = () => {
       {filteredProjects.length > 0 ? (
         <div
           id="projects_container"
-          className="grid lg:grid-cols-2 gap-4 lg:gap-6 "
+          className="grid lg:grid-cols-2  gap-4 lg:gap-6 "
         >
           {filteredProjects.map((project, index) => (
             <ProjectItem key={project.id} project={project} />
@@ -58,7 +59,7 @@ const Projects = () => {
       ) : (
         <div>
           <span className="text-rose-300 font-bold">Sorry!!</span> I didn&apos;t
-          build any project using{""}
+          build any project using{" "}
           <span className="text-green-500">{selected}</span> yet.
         </div>
       )}

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import ExperienceItem from "./ExperienceItem";
 import bg from "../../assests/bg.jpg";
 import Image from "next/image";
+import DotsGrid from "../Backgrounds/DotsGrid";
 
 const Experiences = () => {
   const experiences = [
@@ -34,12 +35,14 @@ const Experiences = () => {
 
   return (
     <section
-      className="xl:container mx-auto relative w-full flex flex-col gap-y-6 bg-cover"
+      className="xl:container mx-auto relative w-full flex flex-col gap-y-6 overflow-hidden"
       id="experiences"
     >
-      <p className="text-2xl uppercase font-bold  text__shadow">
-        <span className="text-green-400 font-bold text-3xl">&lt;</span>My
-        Experiences{""}
+      <p className="text-2xl uppercase font-bold  text__shadow ">
+        <span className="text-green-400 font-bold text-3xl">&lt;</span>
+        <span className="text-gradient-to-r from-teal-500 to-indigo-500">
+          My Experiences
+        </span>
         <span className="text-green-400">&#47;</span>
         <span className="text-green-400 font-bold text-3xl">&gt;</span>
       </p>
@@ -50,6 +53,7 @@ const Experiences = () => {
           <ExperienceItem key={index} {...experience} index={index} />
         ))}
       </div>
+      {/* <DotsGrid /> */}
     </section>
   );
 };

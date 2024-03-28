@@ -43,9 +43,14 @@ const IntroCard = () => {
             href="https://drive.google.com/file/d/1TmPdtPbwJ6U1KTc_UE7z45Y4DviklB8i/view"
             target="_black"
           >
-            <button className="w-full bg-green-400 text-black py-3 rounded-full text-sm uppercase font-semibold hover:bg-green-500 btn-shadow transition-all duration-300">
+            <motion.button
+              whileTap={{ scale: 0.7 }}
+              className=" w-full
+               bg-green-500
+                text-gray-900 py-3 rounded-full text-sm uppercase font-semibold  shadow__lg__on__hover btn-shadow transition-all duration-300"
+            >
               Hire me
-            </button>
+            </motion.button>
           </Link>
         </div>
       </motion.div>

@@ -13,7 +13,6 @@ const projects = [
       "MongoDB",
       "JavaScript",
       "TypeScript",
-      "ExpressJS",
       "TailwindCSS",
     ],
     imgUrl:
@@ -32,7 +31,7 @@ const projects = [
       "MongoDB",
       "JavaScript",
       "TailwindCSS",
-      "ExpressJS",
+      ,
     ],
     imgUrl: "https://i.ibb.co/Wtznx20/roberto.png",
   },
@@ -49,7 +48,6 @@ const projects = [
       "MongoDB",
       "JavaScript",
       "TailwindCSS",
-      "ExpressJS",
     ],
     imgUrl:
       "https://i.ibb.co/sKTdrPW/screencapture-digital-fashion-store-web-app-2024-02-29-21-36-28.png",
@@ -63,12 +61,10 @@ const projects = [
     skills: [
       "ReactJS",
       "NextJS",
-      "ExpressJS",
       "NodeJS",
       "MongoDB",
       "JavaScript",
       "TailwindCSS",
-      "ExpressJS",
     ],
     imgUrl:
       "https://i.ibb.co/N1T4wdL/screencapture-todo-app-qtech-vercel-app-2024-02-29-21-23-53.png",

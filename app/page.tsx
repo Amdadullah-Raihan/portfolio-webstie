@@ -45,7 +45,6 @@ const Home: React.FC = () => {
       <Experiences />
       <Projects />
       <ScrollToTopButton />
-
       {/* global toast contaienr */}
       <Toaster />
     </main>

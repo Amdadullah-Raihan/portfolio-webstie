@@ -14,7 +14,7 @@ const ExperienceItem = ({
   return (
     <motion.div
       ref={ref}
-      initial={{ x: -50, opacity: 0 }}
+      initial={{ x: 150, opacity: 0 }}
       animate={inView ? { x: 0, opacity: 1 } : {}}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className={`flex items-baseline gap-4 lg:gap-10 -ml-[7px]`}
